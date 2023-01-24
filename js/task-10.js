@@ -14,15 +14,17 @@ createBtn.addEventListener("click", () => {
 });
 
 function createBoxes(amount) {
+  let elements = [];
   for (let i = 0; i < amount; i++) {
     let element = document.createElement("div");
     element.style.backgroundColor = getRandomHexColor();
 
     element.style.width = 30 + i * 10 + "px";
     element.style.height = 30 + i * 10 + "px";
-
-    box.append(element);
+    elements.push(element);
   }
+
+  box.append(...elements);
 }
 
 destroyBtn.addEventListener("click", () => {
